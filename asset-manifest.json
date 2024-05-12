@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/demo-asap/static/css/main.8270cc15.css",
+    "main.css": "/demo-asap/static/css/main.8dab80f7.css",
     "main.js": "/demo-asap/static/js/main.6fa9cd6a.js",
     "static/js/453.bcfa90a1.chunk.js": "/demo-asap/static/js/453.bcfa90a1.chunk.js",
     "static/media/frame-1.gif": "/demo-asap/static/media/frame-1.7ad3947f89e8cfdcdb57.gif",
@@ -43,12 +43,12 @@
     "static/media/blue-right.svg": "/demo-asap/static/media/blue-right.4cfeb40d456fffbe08003125dd24f5cf.svg",
     "static/media/right-sign.svg": "/demo-asap/static/media/right-sign.431f1bd59d9ac12ea5b0624efa19fa4e.svg",
     "static/media/send.svg": "/demo-asap/static/media/send.f3e9b7fc3241f330d058a15993ceeec5.svg",
-    "main.8270cc15.css.map": "/demo-asap/static/css/main.8270cc15.css.map",
+    "main.8dab80f7.css.map": "/demo-asap/static/css/main.8dab80f7.css.map",
     "main.6fa9cd6a.js.map": "/demo-asap/static/js/main.6fa9cd6a.js.map",
     "453.bcfa90a1.chunk.js.map": "/demo-asap/static/js/453.bcfa90a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8270cc15.css",
+    "static/css/main.8dab80f7.css",
     "static/js/main.6fa9cd6a.js"
   ]
 }
