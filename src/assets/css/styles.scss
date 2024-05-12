@@ -1,0 +1,727 @@
+/* Default styles */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-ExtraLight.eot');
+    src: url('../fonts/SourceSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-ExtraLight.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-ExtraLight.woff') format('woff'),
+        url('../fonts/SourceSansPro-ExtraLight.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-ExtraLight.svg#SourceSansPro-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Black.eot');
+    src: url('../fonts/SourceSansPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-Black.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Black.woff') format('woff'),
+        url('../fonts/SourceSansPro-Black.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-Black.svg#SourceSansPro-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Light.eot');
+    src: url('../fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-Light.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Light.woff') format('woff'),
+        url('../fonts/SourceSansPro-Light.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-Light.svg#SourceSansPro-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Bold.eot');
+    src: url('../fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-Bold.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Bold.woff') format('woff'),
+        url('../fonts/SourceSansPro-Bold.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Regular.eot');
+    src: url('../fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-Regular.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Regular.woff') format('woff'),
+        url('../fonts/SourceSansPro-Regular.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Semibold.eot');
+    src: url('../fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SourceSansPro-Semibold.woff2') format('woff2'),
+        url('../fonts/SourceSansPro-Semibold.woff') format('woff'),
+        url('../fonts/SourceSansPro-Semibold.ttf') format('truetype'),
+        url('../fonts/SourceSansPro-Semibold.svg#SourceSansPro-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+$color-primary:#5F2BD8;
+$color-light:#6F41DB;
+$color-secondary:#D060C1;
+$color-primary-light: #585859;
+$font-stack: #7D7D7D;
+$white-color: #FFFFFF;
+$button-color:#90FBC8;
+$dark-gray:#1F1F1F;
+$blue-bg:#2A1565;
+
+  $xs: 374px;
+  $sm: 576px;
+  $md: 767px;
+  $lg: 992px;
+  $xl: 1200px;
+  $xxl: 1400px;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font: normal normal normal 18px/25px 'Source Sans Pro';
+	color: $white-color;
+}
+
+h1 {
+	font: normal normal bold 56px/66px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+    @media screen and (max-width: $xl) { 
+        font-size: 45px;
+        line-height: 55px;
+    }
+    @media screen and (max-width: $md) { 
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+h2 {
+	font: normal normal bold 54px/60px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+h3 {
+	font: normal normal bold 48px/55px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+h4 {
+	font: normal normal bold 34px/42px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+h5 {
+	font: normal normal bold 32px/40px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+    @media screen and (max-width: $md) { 
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+h6 {
+	font: normal normal bold 30px/40px 'Source Sans Pro';
+	margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+p {
+	font: normal normal normal /30px 'Source Sans Pro';
+	margin-bottom: 15px;
+}
+
+a,
+p a {
+	font: normal normal normal 18px/23px 'Source Sans Pro';
+	color: $button-color;
+}
+
+strong {
+	font: normal normal 600 18px/23px 'Source Sans Pro';
+}
+
+/* Basic input styling */
+input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+select {
+	width: 100%;
+    border: 1px solid $white-color;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px 24px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 31px;
+    font-family: "Source Sans Pro";
+    font-weight: normal;
+    color: $color-primary-light;
+    @media screen and (max-width:$md){
+        padding: 16px 20px;
+    }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  --moz-appearance: textfield;
+}
+
+select {
+	appearance: none;
+	/* background-image: url(../images/down-arrow.svg); */
+	background-repeat: no-repeat;
+	background-size: 11px;
+	background-position: center right 24px;
+	outline: none;
+	cursor: pointer;
+}
+
+input::placeholder {
+	color: $color-primary-light !important;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder,
+input::placeholder {
+	color: $color-primary-light !important;
+	font-family: "Source Sans Pro";
+	font-weight: normal;
+}
+
+input:focus {
+	outline: none;
+	border-color: $button-color;
+	box-shadow: none;
+}
+
+input:disabled {
+	background-color: none;
+	cursor: not-allowed;
+}
+
+.container {
+	width: 100%;
+	max-width: 1300px;
+	padding: 0px 30px;
+	margin: 0px auto;
+    @media screen and (max-width:$md){
+        padding: 0px 20px;
+    }
+}
+
+button {
+	font-family: 'Source Sans Pro';
+	padding: 19px 39px;
+	font-size: 18px;
+	border: 1px solid $color-secondary;
+	background-color: $color-secondary;
+	color: $white-color;
+	border-radius: 30px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all ease 0.6s;
+	--webkit-transition: all ease 0.6s;
+	text-transform: capitalize;
+}
+
+button:hover {
+	border: 1px solid $color-primary;
+	background-color: $color-primary;
+	color: $white-color;
+}
+main{
+    margin-top: 138px;
+    @media screen and (max-width:$xl){
+        margin-top: 105px;
+    }
+    @media screen and (max-width:$lg){
+        margin-top: 99px;
+    }
+    @media screen and (max-width:$md){
+        margin-top: 125px;
+    }
+}
+.banner-sec{
+    padding: 100px 0px 0px 0px;
+    @media screen and (max-width:$lg){
+        padding: 60px 0px 0px 0px;
+    }
+    @media screen and (max-width:$md){
+        padding: 40px 0px 0px 0px;
+    }
+    
+    h1{
+        color: $color-primary;
+        text-transform: capitalize;
+        margin-bottom: 0px;
+        animation: fade-in 3s;
+        width: 100%;
+        @media screen and (max-width:$lg) {
+            margin-bottom: 25px;
+        }
+        @media screen and (max-width:$md) {
+            min-height: auto;
+            text-align: center;
+            max-width: 100%;
+            margin: 0px auto 25px auto;
+        }
+        @media screen and (max-width:$sm) {
+            max-width: 100%;
+        }
+    }
+    button{
+        display: block;
+        margin-bottom: 30px;
+        @media screen and (max-width:$md) {
+            margin: 0px auto 0px auto;
+        }
+    }
+    .row{
+        display: flex;
+        @media screen and (max-width:$md) {
+            flex-wrap: wrap-reverse;
+        }
+        .col{
+            width:45%;
+            @media screen and (max-width:$md) {
+                width: 100%;
+            }
+            &:nth-child(1){
+                width: 55%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: space-between;
+                @media screen and (max-width:$md) {
+                    flex-direction: column;
+                }
+                
+                button{
+                    &.mobile-btn{
+                        display: none;
+                        @media screen and (max-width:$md) {
+                           display: block;
+                           margin: 0px auto;
+                           
+                        }
+                    }
+                    &.desk-btn{
+                        display: block;
+                        @media screen and (max-width:$lg) {
+                            padding: 19px 30px;
+                         }
+                        @media screen and (max-width:$md) {
+                           display: none;
+                        }
+                    }
+                }
+                @media screen and (max-width:$md) {
+                    width: 100%;
+                    margin-top: 0px;
+                    text-align: center;
+                    justify-content: center;
+                }
+            }
+            .img-wrap{
+                position: relative;
+                text-align: right;
+                height: 458px;
+                @media screen and (max-width:$xl) {
+                    height: 400px;
+                }
+                @media screen and (max-width:$md) {
+                    height: auto;
+                    width: 300px;
+                    margin: 0px auto
+                }
+                @media screen and (max-width:$sm) {
+                    width: 238px;
+                }
+                img{
+                    height: 100%;
+                    @media screen and (max-width:$lg) {
+                        width: 100%;
+                    }
+                    @media screen and (max-width:$md) { 
+                        object-fit: contain;
+                        height: auto;
+                    }
+                    
+                }
+                
+                @media screen and (max-width:$md) {
+                    text-align: center;
+                }
+                @media screen and (max-width:$md) {
+                    text-align: center;
+                }
+                
+            }
+        }
+    }
+}
+.consultant-banner{
+    .row {
+        .col{
+            &:nth-child(1){
+                align-content: flex-start;
+            }
+            h1{
+                margin-bottom: 25px;
+            }
+        }
+    }
+    
+}
+
+.profile-sec{
+    padding: 100px 0px;
+    @media screen and (max-width:$lg) {
+        padding: 65px 0px;
+    }
+    @media screen and (max-width:$md) {
+        padding: 75px 0px 70px 0px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        @media screen and (max-width:$md) {
+            flex-wrap: wrap;
+        }
+        .col{
+            &:nth-child(1){
+                width:40%;
+                @media screen and (max-width:$md) {
+                    width:100%;
+                }
+            }
+            &:nth-child(2){
+                width:60%;
+                @media screen and (max-width:$md) {
+                    display: none;
+                }
+            }
+            h5{
+                color: $color-primary;
+                margin-bottom: 20px;
+                @media screen and (max-width:$md) {
+                    text-align: center;
+                    margin-bottom: 13px;
+                }
+            }
+            p{
+                color: $color-secondary;
+                margin-bottom: 0px;
+                font-size: 20px;
+                font-weight: 600;
+                @media screen and (max-width:$md) {
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+            .img-wrap{
+                img{
+                    width: 100%;
+                    @media screen and (max-width:$md) {
+                        height: 250px;
+                    }
+                    @media screen and (max-width:$sm) {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+.asap-sec{
+    padding: 100px 0px;
+    @media screen and (max-width:$lg) {
+        padding:0px 0px;
+    }
+    @media screen and (max-width:$md) {
+        padding:0px 0px 10px 0px;
+    }
+    h5{
+        color: $color-light;
+        margin-bottom: 40px;
+        text-align: center;
+        @media screen and (max-width:$md) {
+            margin-bottom: 24px;
+        }
+    }
+    .row{
+        display: flex;
+        padding: 40px;
+        background-color: $color-light;
+        border-radius: 30px;
+        gap:60px;
+        @media screen and (max-width:$lg) {
+            padding: 40px 30px;
+            gap: 20px;
+        }
+        @media screen and (max-width:$md) {
+            flex-wrap: wrap;
+            padding: 40px 40px;
+        }
+        @media screen and (max-width:$xs) {
+            padding: 40px 20px;
+        }
+        .col{
+            width: 50%;
+            @media screen and (max-width:$md) {
+                width: 100%;
+            }
+            h6{
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            ul{
+                list-style-type: none;
+                li{
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px 20px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 24px;
+                    font-size: 20px;
+                    color: $color-secondary;
+                    font-weight: 600;
+                    @media screen and (max-width:$sm) {
+                        padding: 15px 15px;
+                    }
+                    &:nth-last-child(1){
+                        margin-bottom: 0px;
+                    }
+                    img{
+                        display: inline-block;
+                        margin-right: 14px;
+                        width: 16px;
+                        height: 16px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}
+.ai-sec{
+    padding: 100px 0px;
+    @media screen and (max-width:$lg){
+        padding: 55px 0px 60px 0px;
+    }
+    @media screen and (max-width:$md){
+        padding: 70px 0px 40px 0px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        @media screen and (max-width:$md){
+            flex-wrap: wrap-reverse;
+        }
+        .col{
+            &:nth-child(1){
+                width: 60%;
+                @media screen and (max-width:$md){
+                    width:100%;
+                }
+            }
+            &:nth-child(2){
+                width:40%;
+                @media screen and (max-width:$md){
+                    width:100%;
+                    margin-bottom: 10px;
+                }
+            }
+            h5{
+                color: $color-primary;
+                margin-bottom: 20px;
+            }
+            .img-wrap{
+                text-align: center;
+                img{
+                    @media screen and (max-width:$md){
+                        width: 100%;
+                        max-width: 298px;
+                    }
+                }
+            }
+            ul{
+                list-style-type: none;
+                li{
+                    font-size: 20px;
+                    color: $color-secondary;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: baseline;
+                    margin-bottom: 24px;
+                    &:nth-last-child(1){
+                        margin-bottom: 0px;
+                    }
+                    img{
+                        display: inline-block;
+                        margin-right: 10px;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+.pack-sec{
+    background-color: $color-light;
+    padding: 100px 0px;
+    @media screen and (max-width:$lg) {
+        padding: 65px 0px 70px 0px;
+    }
+    @media screen and (max-width:$md) {
+        padding: 40px 0px 40px 0px;
+    }
+    h5{
+        color: $white-color;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .row{
+        display: flex;
+        align-items: flex-start;
+        gap: 26px;
+        @media screen and (max-width:$lg) {
+           flex-wrap: wrap;
+        }
+        @media screen and (max-width:$md) {
+            gap: 30px;
+        }
+        .col{
+            width: 25%;
+            background-color: $white-color;
+            border-radius: 20px;
+            padding: 30px;
+            min-height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            transition: all ease 0.4s;
+            -webkit-transition:all ease 0.4s;
+            @media screen and (max-width:$xxl) {
+                padding: 30px 22px;
+            }
+            @media screen and (max-width:$lg) {
+                width: calc(50% - 13px);
+            }
+            @media screen and (max-width:$md) {
+                width: 100%;
+                min-height: auto;
+                padding: 30px 30px;
+            }
+            @media screen and (max-width:$xs) {
+                padding: 30px 20px;
+            }
+            &:hover{
+                transform: translateY(-10px);
+                background-color: $blue-bg;
+                h5{
+                    color: $white-color;
+                }
+                ul{
+                    li{
+                        color: $white-color;
+                        img{
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+            button{
+                width: 100%;
+            }
+            h5{
+                text-transform: uppercase;
+                margin-bottom: 24px;
+                color: $dark-gray;
+                text-align: left;
+                @media screen and (max-width:$md) {
+                    font-size: 32px;
+                    line-height: 40px;
+                }
+                &:hover{
+                    color: $white-color;
+                }
+            }
+            ul{
+                list-style-type: none;
+                li{
+                    font-size: 24px;
+                    color: $dark-gray;
+                    margin-bottom: 24px;
+                    display: flex;
+                    align-items: baseline;
+                    
+                    img{
+                        display: inline-block;
+                        margin-right: 14px;
+                        width: 17px;
+                        height: 17px;
+                        object-fit: contain;
+                        @media screen and (max-width:$md) {
+                            position: relative;
+                            top: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
