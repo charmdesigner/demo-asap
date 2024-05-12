@@ -21,7 +21,7 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <Link to="/">
+              <Link to="/demo-asap">
                 <img src={Logo} className="logo" alt="logo" />
               </Link>
               <div className="navbar">

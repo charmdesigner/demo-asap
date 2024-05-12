@@ -302,17 +302,22 @@ main{
         margin-bottom: 0px;
         animation: fade-in 3s;
         width: 100%;
+        
         @media screen and (max-width:$lg) {
             margin-bottom: 25px;
         }
         @media screen and (max-width:$md) {
-            min-height: auto;
+            min-height: 134px;
             text-align: center;
             max-width: 100%;
             margin: 0px auto 25px auto;
         }
         @media screen and (max-width:$sm) {
             max-width: 100%;
+            min-height: 220px;
+        }
+        @media screen and (max-width:$xs){
+            min-height: 265px;
         }
     }
     button{
@@ -363,9 +368,10 @@ main{
                 }
                 @media screen and (max-width:$md) {
                     width: 100%;
-                    margin-top: 0px;
                     text-align: center;
                     justify-content: center;
+                    max-width: 530px;
+                    margin: 0px auto;
                 }
             }
             .img-wrap{
@@ -414,6 +420,7 @@ main{
             }
             h1{
                 margin-bottom: 25px;
+                min-height: auto;
             }
         }
     }
