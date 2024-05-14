@@ -1,0 +1,115 @@
+$color-primary:#5F2BD8;
+$color-secondary:#D060C1;
+$color-primary-light: #585859;
+$font-stack: #7D7D7D;
+$white-color: #FFFFFF;
+$button-color:#90FBC8;
+
+$xs: 374px;
+$sm: 576px;
+$md: 767px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+.header {
+    position: fixed;
+    top: 0;
+    max-height: 138px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-primary;
+    z-index: 9;
+    &.scrolled{
+        .col{
+            padding: 15px 0px;
+        }
+    }
+    .col{
+        display: flex;
+        justify-content: space-between;
+        padding: 42px 0px;
+        align-items: center;
+        transition: background-color 0.5s, padding 1s;
+        @media screen and (max-width:$xl) {
+            padding: 25px 0px;
+        }
+        @media screen and (max-width:$md) {
+            flex-wrap: wrap;
+            gap:20px;
+            padding: 20px 0px;
+        }
+        a{
+            display: flex;
+            align-items: center;
+            @media screen and (max-width:$md) {
+                width: 100%;
+                justify-content: center;
+                
+            }
+            img{
+                @media screen and (max-width:$lg) {
+                    height: 35px;
+                }
+                @media screen and (max-width:$md) {
+                    height: 25px;
+                }
+            }
+        }
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        @media screen and (max-width:$md){
+            width: 100%;
+            justify-content: center;
+        }
+        .nav{
+            display: flex;
+            gap: 24px;
+            @media screen and (max-width: $lg) {
+                gap: 12px;
+            }
+            @media screen and (max-width: $md) {
+                gap: 20px;
+            }
+            @media screen and (max-width: $xs) {
+                gap: 10px;
+            }
+        }
+    }
+        button{
+            padding: 15px 50px;
+            outline: none;
+            border: 1px solid $white-color;
+            font-size: 18px;
+            color: $white-color;
+            font-weight: bold;
+            background-color:transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 70ms;
+            @media screen and (max-width: $lg) {
+                padding: 12px 30px;
+            }
+            @media screen and (max-width: $md){
+                font-size: 16px;
+                padding: 9px 20px;
+            }
+            &:hover{
+                background-color: $color-secondary;
+                border: 1px solid $color-secondary;
+            }
+        }
+      }
+ 
+  
+  
+  
+ 
+ 
+  
+  
+  
