@@ -26,10 +26,10 @@ export default function validate(values) {
   }
 
   if (!values.checkbox1) {
-    errors.checkbox1 = "You must accept the terms and conditions.";
+    errors.checkbox1 = "Company code is a required.";
   }
   if (!values.checkbox2) {
-    errors.checkbox2 = "You must accept the terms and conditions.";
+    errors.checkbox2 = "You must accept the terms for the news notification.";
   }
   if (!values.checkbox3) {
     errors.checkbox3 = "You must accept the terms and conditions.";

@@ -26,10 +26,10 @@ const Register = (props) => {
     if (submitSuccess) {
       setIsModalOpen(true); // Open the modal on success
       setSubmitSuccess(true);
-      // setTimeout(() => {
-      //   setIsModalOpen(false);
-      //   window.location.href = "/demo-asap"; // Replace '/home' with your actual home page URL
-      // }, 1500);
+      setTimeout(() => {
+        setIsModalOpen(false);
+        window.location.href = "/demo-asap"; // Replace '/home' with your actual home page URL
+      }, 1500);
     }
   }, [submitSuccess]);
 
