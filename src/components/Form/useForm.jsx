@@ -1,7 +1,7 @@
 // useForm.js
 import { useState } from "react";
 
-const useForm = (validate) => {
+const useForm = (validate, onSubmitSuccess) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -48,20 +48,23 @@ const useForm = (validate) => {
       }, 100);
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const validationErrors = validate(values);
-  //   setErrors(validationErrors);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate(values);
+    setErrors(validationErrors);
 
-  //   if (Object.keys(validationErrors).length === 0) {
-  //     // Submit the form or trigger any action
-  //   }
-  // };
+    if (Object.keys(validationErrors).length === 0) {
+      if (onSubmitSuccess) {
+        onSubmitSuccess();
+      }
+    }
+  };
 
   return {
     handleChange,
     values,
     errors,
+    handleSubmit,
   };
 };
 

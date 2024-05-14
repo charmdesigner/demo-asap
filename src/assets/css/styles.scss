@@ -241,8 +241,13 @@ input:focus {
 }
 
 input:disabled {
-	background-color: #fff;
+	background-color:$white-color;
 	cursor: not-allowed;
+    --webkit-appearance:none;
+    --webkit-opacity: 1;
+}
+input::-webkit-input-placeholder {
+    background-color:$white-color;
 }
 
 .container {
