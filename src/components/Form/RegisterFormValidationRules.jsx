@@ -1,26 +1,38 @@
 export default function validate(values) {
   let errors = {};
+
   if (!values.email) {
-    errors.email = "Email address is required";
+    errors.email = "Email is a mandatory field";
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = "Email address is invalid";
   }
-  if (!values.password) {
-    errors.password = "Password is required";
-  } else if (values.password.length < 8) {
-    errors.password = "Password must be 8 or more characters";
-  } else if (!/\d/.test(values.password)) {
-    errors.password = "Password must contain atleast 1 number";
-  } else if (!/[!@#$%&?]/g.test(values.password)) {
-    errors.password = "Password must contain atleast 1 special character";
-  } else if (!/[A-Z]/g.test(values.password)) {
-    errors.password = "Password must contain atleast 1 capitol letter";
+
+  if (!values.linkedinUrl) {
+    errors.linkedinUrl = "LinkedIn URL is a mandatory field";
+  } else if (
+    !/(https?)?:?(\/\/)?(([w]{3}||\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(
+      values.linkedinUrl
+    )
+  ) {
+    errors.linkedinUrl = "LinkedIn URL is invalid";
   }
 
-  if(!values.url){
-    errors.url = "Url is invalid";
-  }else if(!/(https?)?:?(\/\/)?(([w]{3}||\w\w)\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(values.url)){
-    errors.url = "Url is invalid";
+  if (!values.phone) {
+    errors.phone = "Phone number is a mandatory field";
+  }
+
+  if (!values.companyCode) {
+    errors.companyCode = "Company code is a mandatory field";
+  }
+
+  if (!values.checkbox1) {
+    errors.checkbox1 = "You must accept the terms and conditions.";
+  }
+  if (!values.checkbox2) {
+    errors.checkbox2 = "You must accept the terms and conditions.";
+  }
+  if (!values.checkbox3) {
+    errors.checkbox3 = "You must accept the terms and conditions.";
   }
 
   return errors;

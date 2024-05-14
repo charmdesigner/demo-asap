@@ -21,8 +21,9 @@ const Home = () => {
             <div className="row">
               <div className="col">
                 <h1>
-                  <TypingAnimation text="La plateforme de consolidation de CV adapté aux ESN & aux professionnels du recrutement" />
+                  <TypingAnimation text="La Plateforme De Consolidation De CV Adapté Aux ESN & Aux Professionnels Du Recrutement" />
                 </h1>
+
                 <button>Demander une Démo</button>
               </div>
               <div className="col">

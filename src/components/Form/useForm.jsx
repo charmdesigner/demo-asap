@@ -1,33 +1,65 @@
-import { useState, useEffect } from "react";
+// useForm.js
+import { useState } from "react";
 
-const useForm = (callback, validate) => {
+const useForm = (validate) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+  const handleCompanyCode = async () => {
+    try {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ companyCode: values.companyCode }), // Ensure body is stringified
+      };
+
+      const response = await fetch(
+        "https://europe-west9-heroic-purpose-420510.cloudfunctions.net/get-company-details",
+        requestOptions
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch company details");
+      }
+
+      const data = await response.json();
+      const companyName = data.companyName;
+
+      setValues((prevValues) => ({
+        ...prevValues,
+        companyName: companyName,
+      }));
+    } catch (error) {
+      console.error(error);
+      // Optionally, you can set error state here
     }
-  }, [callback, errors, isSubmitting]); // Include callback, errors, and isSubmitting in the dependency array
-
-  const handleSubmit = (event) => {
-    if (event) event.preventDefault();
-    setErrors(validate(values));
-    setIsSubmitting(true);
   };
 
-  const handleChange = (event) => {
-    event.persist();
-    setValues((values) => ({
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
       ...values,
-      [event.target.name]: event.target.value,
-    }));
+      [name]: value,
+    });
+
+    name === "companyCode" &&
+      setTimeout(() => {
+        handleCompanyCode();
+      }, 100);
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const validationErrors = validate(values);
+  //   setErrors(validationErrors);
+
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     // Submit the form or trigger any action
+  //   }
+  // };
 
   return {
     handleChange,
-    handleSubmit,
     values,
     errors,
   };

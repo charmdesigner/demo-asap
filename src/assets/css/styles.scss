@@ -241,7 +241,7 @@ input:focus {
 }
 
 input:disabled {
-	background-color: none;
+	background-color: #fff;
 	cursor: not-allowed;
 }
 
@@ -287,6 +287,25 @@ main{
         margin-top: 125px;
     }
 }
+// Animation
+@keyframes typing {
+	to { width: 0 }
+}
+@keyframes caret {
+	50% { color: transparent }
+}
+
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+  }
 .banner-sec{
     padding: 100px 0px 0px 0px;
     @media screen and (max-width:$lg){
@@ -298,10 +317,11 @@ main{
     
     h1{
         color: $color-primary;
-        text-transform: capitalize;
+        text-transform: inherit;
         margin-bottom: 0px;
-        animation: fade-in 3s;
+        // animation: fade-in 3s;
         width: 100%;
+        
         
         @media screen and (max-width:$lg) {
             margin-bottom: 25px;

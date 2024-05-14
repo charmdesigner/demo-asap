@@ -19,6 +19,38 @@ $blue-bg:#2A1565;
       overflow: hidden;
     }
   }
+  button{
+    &.close-icon{
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      max-width: 40px;
+      height: 40px;
+      background-color: transparent;
+      padding: 12px;
+      border: none;
+      background-color: $color-primary;
+      @media screen and (max-width:$xl){
+        right: 20px;
+        top: 25px;
+        max-width: 30px;
+        height: 30px;
+        padding: 9px;
+        display: flex;
+        align-items: center;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        filter: invert(1) brightness(1);
+        position: relative;
+        top: -1px;
+        @media screen and (max-width:$xl){
+          top: 0px;
+        }
+      }
+    }
+  }
   .modal{
     padding: 50px 0px;
     .modal-main{

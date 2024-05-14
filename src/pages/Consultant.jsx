@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import ConsultantHeader from "../components/Header/ConsultantHeader";
 import Footer from "../components/Footer/Footer";
 import Frame from "../assets/images/frame.gif";
 import Frame1 from "../assets/images/frame-1.gif";
 import Send from "../assets/images/send.svg";
-import Modal from "../components/Modal/Modal";
 import "../assets/css/styles.scss";
 
-const Consultant = ({ close }) => {
-  const [modalState, setModalState] = useState(false);
+const Consultant = () => {
   return (
     <>
       <ConsultantHeader />
@@ -18,21 +16,13 @@ const Consultant = ({ close }) => {
             <div className="row">
               <div className="col">
                 <h1>
-                  Ne perdez plus votre temps à reformater votre CV. Demandez
-                  ASAP-CV à votre société!
+                  Ne Perdez Plus Votre Temps À Reformater Votre CV. Demandez
+                  ASAP-CV À Votre Société!
                 </h1>
-                <button
-                  className="desk-btn"
-                  onClick={() => setModalState(true)}
-                >
+                <button className="desk-btn">
                   Envoyer une proposition à votre société
                 </button>
-                <button
-                  className="mobile-btn"
-                  onClick={() => setModalState(true)}
-                >
-                  Demander une Démo
-                </button>
+                <button className="mobile-btn">Demander une Démo</button>
               </div>
               <div className="col">
                 <div className="img-wrap">
@@ -74,15 +64,6 @@ const Consultant = ({ close }) => {
           </div>
         </section>
       </main>
-      <div
-        className="modal-main"
-        onClick={() => {
-          close();
-        }}
-      >
-        <Modal show={modalState} />
-      </div>
-
       <Footer />
     </>
   );
