@@ -152,8 +152,7 @@ const Register = (props) => {
                           type="checkbox"
                           id="checkbox1"
                           name="checkbox1"
-                          required
-                          // Use values.checkbox1 for controlled checkbox
+                          checked={values.checkbox1 || false}
                           onChange={handleCheckboxChange}
                         />
                         <label htmlFor="checkbox1">Code de la société</label>
@@ -173,7 +172,6 @@ const Register = (props) => {
                             name="companyCode"
                             onChange={handleChange}
                             value={values.companyCode || ""}
-                            required
                             placeholder="Code de la société"
                           />
                         </div>
