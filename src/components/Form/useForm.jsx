@@ -1,4 +1,3 @@
-// useForm.js
 import { useState } from "react";
 
 const useForm = (validate, onSubmitSuccess) => {
@@ -36,16 +35,21 @@ const useForm = (validate, onSubmitSuccess) => {
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, checked, type } = e.target;
+
+    const fieldValue = type === "checkbox" ? checked : value;
+
     setValues({
       ...values,
-      [name]: value,
+
+      [name]: fieldValue,
     });
 
-    name === "companyCode" &&
+    if (name === "companyCode") {
       setTimeout(() => {
         handleCompanyCode();
       }, 100);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -65,6 +69,7 @@ const useForm = (validate, onSubmitSuccess) => {
     values,
     errors,
     handleSubmit,
+    setValues,
   };
 };
 

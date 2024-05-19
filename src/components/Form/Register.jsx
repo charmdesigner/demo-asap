@@ -170,6 +170,7 @@ const Register = (props) => {
                             }`}
                             type="text"
                             name="companyCode"
+                            disabled={!values.checkbox1}
                             onChange={handleChange}
                             value={values.companyCode || ""}
                             placeholder="Code de la société"
@@ -184,7 +185,7 @@ const Register = (props) => {
                           <input
                             className={`input`}
                             type="text"
-                            disabled
+                            disabled={!values.checkbox1}
                             name="companyName"
                             value={values.companyName || ""}
                             readOnly
