@@ -33,10 +33,6 @@ export default function validate(values) {
   if (!values.checkbox1) {
     errors.checkbox1 = "Le code de l’entreprise est obligatoire.";
   }
-  if (!values.checkbox2) {
-    errors.checkbox2 =
-      "Vous devez accepter les conditions de notification des actualités.";
-  }
   if (!values.checkbox3) {
     errors.checkbox3 = "Vous devez accepter les Termes et Conditions.";
   }

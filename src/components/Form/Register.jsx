@@ -208,9 +208,6 @@ const Register = (props) => {
                           nouvelles concernant le produit 
                         </label>
                       </div>
-                      {errors.checkbox2 && (
-                        <p className="help is-danger">{errors.checkbox2}</p>
-                      )}
                     </div>
                     <div className="field checkbox-wrap">
                       <div className="control">
