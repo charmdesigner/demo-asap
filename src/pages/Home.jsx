@@ -8,10 +8,20 @@ import Frame from "../assets/images/frame.gif";
 import Frame1 from "../assets/images/frame-1.gif";
 import Send from "../assets/images/send.svg";
 import BlueRight from "../assets/images/blue-right.svg";
+import Mark from "../assets/images/coming-soon-mark.png";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import "../assets/css/styles.scss";
 
 const Home = () => {
+  const handleEmailClick = () => {
+    const email = "info@asap-cv.com"; // Replace with the actual email address
+    const subject = "Request for Demo";
+    const body = `Hello ASAP-CV, Je suis *** et je souhaiterais une démo de ton outil. Pourrais-tu me recontacter?`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${body}`;
+  };
+
   return (
     <>
       <Header />
@@ -24,7 +34,7 @@ const Home = () => {
                   <TypingAnimation text="La Plateforme De Consolidation De CV Adapté Aux ESN & Aux Professionnels Du Recrutement" />
                 </h1>
 
-                <button>Demander une Démo</button>
+                <button onClick={handleEmailClick}>Demander une Démo</button>
               </div>
               <div className="col">
                 <div className="img-wrap">
@@ -146,11 +156,15 @@ const Home = () => {
                   <ul>
                     <li>
                       <img src={BlueRight} alt="" />
-                      20 CV/mois
+                      <h5>
+                        <span>20 CV/mois</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      1mois offert
+                      <h5>
+                        <span>1mois offert</span>
+                      </h5>
                     </li>
                   </ul>
                 </div>
@@ -162,22 +176,34 @@ const Home = () => {
                   <ul>
                     <li>
                       <img src={BlueRight} alt="" />
-                      100 CV/mois
+                      <h5>
+                        <span>100 CV/mois</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      Refonte du template CV tous les 6 mois
-                    </li>
-                    <li>
-                      <img src={BlueRight} alt="" />1 mois offert
-                    </li>
-                    <li>
-                      <img src={BlueRight} alt="" />
-                      File prioritaire
+                      <h5>
+                        <span>Refonte du template CV tous les 6 mois</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      IA SCRIBEE v1
+                      <h5>
+                        <span>1 mois offert</span>
+                      </h5>
+                    </li>
+                    <li>
+                      <img src={BlueRight} alt="" />
+                      <h5>
+                        <span>File prioritaire</span>
+                      </h5>
+                    </li>
+                    <li>
+                      <img src={BlueRight} alt="" />
+                      <h5>
+                        <span>IA SCRIBEE v1</span>
+                        <img src={Mark} alt="" className="mark" />
+                      </h5>
                     </li>
                   </ul>
                 </div>
@@ -189,26 +215,41 @@ const Home = () => {
                   <ul>
                     <li>
                       <img src={BlueRight} alt="" />
-                      300 CV/mois
+                      <h5>
+                        <span>300 CV/mois</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      Refonte du template CV tous les mois
-                    </li>
-                    <li>
-                      <img src={BlueRight} alt="" />1 mois offert
-                    </li>
-                    <li>
-                      <img src={BlueRight} alt="" />
-                      File prioritaire
+                      <h5>
+                        <span>Refonte du template CV tous les mois</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      IA SCRIBEE v1
+                      <h5>
+                        <span>1 mois offert</span>
+                      </h5>
                     </li>
                     <li>
                       <img src={BlueRight} alt="" />
-                      IA SCRIBEE v2
+                      <h5>
+                        <span>File prioritaire</span>
+                      </h5>
+                    </li>
+                    <li>
+                      <img src={BlueRight} alt="" />
+                      <h5>
+                        <span>IA SCRIBEE v1</span>
+                        <img src={Mark} alt="" className="mark" />
+                      </h5>
+                    </li>
+                    <li>
+                      <img src={BlueRight} alt="" />
+                      <h5>
+                        <span>IA SCRIBEE v2</span>
+                        <img src={Mark} alt="" className="mark" />
+                      </h5>
                     </li>
                   </ul>
                 </div>
@@ -220,7 +261,12 @@ const Home = () => {
                   <ul>
                     <li>
                       <img src={BlueRight} alt="" />
-                      Intégration dans le CRM des informations candidats
+                      <h5>
+                        <span>
+                          Intégration dans le CRM des informations candidats
+                        </span>
+                        <img src={Mark} alt="" className="mark" />
+                      </h5>
                     </li>
                   </ul>
                 </div>
