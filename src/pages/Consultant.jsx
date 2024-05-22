@@ -4,17 +4,10 @@ import Footer from "../components/Footer/Footer";
 import Frame from "../assets/images/frame.gif";
 import Frame1 from "../assets/images/frame-1.gif";
 import Send from "../assets/images/send.svg";
+import EmailButton from "../components/EmailButton/EmailButton";
 import "../assets/css/styles.scss";
 
 const Consultant = () => {
-  const handleEmailClick = () => {
-    const email = "info@asap-cv.com"; // Replace with the actual email address
-    const subject = "Request for Demo";
-    const body = `Hello ASAP-CV, Je suis *** et je souhaiterais une démo de ton outil. Pourrais-tu me recontacter?`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${body}`;
-  };
   return (
     <>
       <ConsultantHeader />
@@ -30,9 +23,7 @@ const Consultant = () => {
                 <button className="desk-btn">
                   Envoyer une proposition à votre société
                 </button>
-                <button className="mobile-btn" onClick={handleEmailClick}>
-                  Demander une Démo
-                </button>
+                <EmailButton className="mobile-btn" />
               </div>
               <div className="col">
                 <div className="img-wrap">

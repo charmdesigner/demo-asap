@@ -10,18 +10,10 @@ import Send from "../assets/images/send.svg";
 import BlueRight from "../assets/images/blue-right.svg";
 import Mark from "../assets/images/coming-soon-mark.png";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
+import EmailButton from "../components/EmailButton/EmailButton";
 import "../assets/css/styles.scss";
 
 const Home = () => {
-  const handleEmailClick = () => {
-    const email = "info@asap-cv.com"; // Replace with the actual email address
-    const subject = "Request for Demo";
-    const body = `Hello ASAP-CV, Je suis *** et je souhaiterais une démo de ton outil. Pourrais-tu me recontacter?`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${body}`;
-  };
-
   return (
     <>
       <Header />
@@ -34,7 +26,7 @@ const Home = () => {
                   <TypingAnimation text="La Plateforme De Consolidation De CV Adapté Aux ESN & Aux Professionnels Du Recrutement" />
                 </h1>
 
-                <button onClick={handleEmailClick}>Demander une Démo</button>
+                <EmailButton />
               </div>
               <div className="col">
                 <div className="img-wrap">
