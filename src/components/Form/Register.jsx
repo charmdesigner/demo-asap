@@ -4,12 +4,40 @@ import validate from "./RegisterFormValidationRules";
 import { Link, Navigate } from "react-router-dom";
 import LogoRegister from "../../assets/images/logo-pink.svg";
 import Checked from "../../assets/images/checked.png";
+import axios from "axios"; // Import axios for making HTTP requests
 import "./Register.scss";
 
 const Register = (props) => {
   const handleSubmitForm = async (e) => {
-    setIsModalOpen(false);
-    setSubmitSuccess(true);
+    console.log("Form values:", values); // Log the form values for debugging
+
+    try {
+      const response = await axios.post(
+        "https://us-central1-heroic-purpose-420510.cloudfunctions.net/request-from-ui-and-post-linkedin-data",
+        {
+          firstName: values.firstname,
+          lastName: values.name,
+          linkedInUrl: values.linkedinUrl,
+          phone: values.phone,
+          email: values.email,
+          companyCode: values.companyCode,
+        }
+      );
+      console.log("Response:", response.data); // Log the response data
+    } catch (error) {
+      console.error(
+        "Error submitting the form:",
+        error.response?.data || error.message
+      ); // Log the error response data or message
+    } finally {
+      // Open the success modal and set submit success to true regardless of the request outcome
+      setIsModalOpen(true);
+      setSubmitSuccess(true);
+      setTimeout(() => {
+        setIsModalOpen(false);
+        window.location.href = "/demo-asap"; // Redirect to the demo page
+      }, 1500);
+    }
   };
 
   const { values, errors, handleChange, handleSubmit } = useForm(

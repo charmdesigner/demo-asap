@@ -4,12 +4,13 @@ const useForm = (validate, onSubmitSuccess) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
-  const handleCompanyCode = async () => {
+  const handleCompanyCode = async (e) => {
+    // console.log("EVALUE==> " + JSON.stringify(e));
     try {
       const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ companyCode: values.companyCode }), // Ensure body is stringified
+        body: JSON.stringify({ companyCode: e }), // Ensure body is stringified
       };
 
       const response = await fetch(
@@ -29,13 +30,13 @@ const useForm = (validate, onSubmitSuccess) => {
         companyName: companyName,
       }));
     } catch (error) {
-      console.error(error);
-      // Optionally, you can set error state here
+      console.error(error); // Optionally, you can set error state here
     }
   };
 
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
+    console.log();
 
     const fieldValue = type === "checkbox" ? checked : value;
 
@@ -47,7 +48,7 @@ const useForm = (validate, onSubmitSuccess) => {
 
     if (name === "companyCode") {
       setTimeout(() => {
-        handleCompanyCode();
+        handleCompanyCode(value);
       }, 100);
     }
   };
