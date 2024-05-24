@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useForm from "./useForm";
 import validate from "./RegisterFormValidationRules";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoRegister from "../../assets/images/logo-pink.svg";
 import Checked from "../../assets/images/checked.png";
-import axios from "axios"; // Import axios for making HTTP requests
+import Warning from "../../assets/images/warning.png";
+import axios from "axios";
 import "./Register.scss";
 
-const Register = (props) => {
-  const handleSubmitForm = async (e) => {
-    console.log("Form values:", values); // Log the form values for debugging
+const Register = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [modalImage, setModalImage] = useState(Checked);
 
+  const handleSubmitForm = async () => {
     try {
       const response = await axios.post(
         "https://us-central1-heroic-purpose-420510.cloudfunctions.net/request-from-ui-and-post-linkedin-data",
@@ -23,20 +27,29 @@ const Register = (props) => {
           companyCode: values.companyCode,
         }
       );
-      console.log("Response:", response.data); // Log the response data
+
+      if (response.status === 200) {
+        setModalMessage("Détails soumis avec succès");
+        setSubmitSuccess(true);
+        setModalImage(Checked);
+      }
     } catch (error) {
-      console.error(
-        "Error submitting the form:",
-        error.response?.data || error.message
-      ); // Log the error response data or message
+      let errorMessage =
+        "Une erreur s'est produite lors de la soumission du formulaire. Veuillez réessayer.";
+      if (error.response && error.response.status === 400) {
+        errorMessage =
+          error.response.data.message ||
+          "Échec de la soumission, veuillez réessayer plus tard.";
+        setModalImage(Warning);
+      }
+      setModalMessage(errorMessage);
     } finally {
-      // Open the success modal and set submit success to true regardless of the request outcome
-      setIsModalOpen(true);
       setSubmitSuccess(true);
+      setIsModalOpen(true);
       setTimeout(() => {
         setIsModalOpen(false);
         window.location.href = "/demo-asap"; // Redirect to the demo page
-      }, 1500);
+      }, 2500);
     }
   };
 
@@ -44,30 +57,13 @@ const Register = (props) => {
     validate,
     handleSubmitForm
   );
-  const [companyName, setCompanyName] = useState("");
-  const [error, setError] = useState({});
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control the modal visibility
-
-  useEffect(() => {
-    if (submitSuccess) {
-      setIsModalOpen(true); // Open the modal on success
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        setIsModalOpen(false);
-        window.location.href = "/demo-asap"; // Replace '/home' with your actual home page URL
-      }, 1500);
-    }
-  }, [submitSuccess]);
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
   };
 
   const handleCheckboxChange = (e) => {
-    const { name, checked } = e.target;
-    handleChange(e); // Update form values
+    handleChange(e);
   };
 
   return (
@@ -91,7 +87,7 @@ const Register = (props) => {
               </div>
               <div className="col">
                 <div className="box">
-                  <form onSubmit={(e) => handleSubmit(e)} noValidate>
+                  <form onSubmit={handleSubmit} noValidate>
                     <div className="field-group">
                       <div className="field">
                         <div className="control">
@@ -211,7 +207,7 @@ const Register = (props) => {
                       <div className="field">
                         <div className="control">
                           <input
-                            className={`input`}
+                            className="input"
                             type="text"
                             disabled={!values.checkbox1}
                             name="companyName"
@@ -262,21 +258,19 @@ const Register = (props) => {
                       Envoyer le formulaire
                     </button>
                   </form>
-                  {/* Display validation errors */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
-      {/* Success modal */}
-      {submitSuccess && (
+      {isModalOpen && (
         <div className={`submitmodal ${isModalOpen ? "is-active" : ""}`}>
           <div className="modal-background" onClick={handleCloseModal}></div>
           <div className="modal-content">
             <div className="box">
-              <img src={Checked} alt="" />
-              <p>Détails soumis avec succès</p>
+              <img src={modalImage} alt="" />
+              <p>{modalMessage}</p>
             </div>
           </div>
         </div>
