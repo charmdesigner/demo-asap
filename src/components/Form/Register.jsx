@@ -13,8 +13,10 @@ const Register = () => {
   const [modalMessage, setModalMessage] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [modalImage, setModalImage] = useState(Checked);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmitForm = async () => {
+    setIsLoading(true); // Start loading indicator
     try {
       const response = await axios.post(
         "https://us-central1-heroic-purpose-420510.cloudfunctions.net/request-from-ui-and-post-linkedin-data",
@@ -41,9 +43,15 @@ const Register = () => {
           error.response.data.message ||
           "Échec de la soumission, veuillez réessayer plus tard.";
         setModalImage(Warning);
+      } else if (error.response.status === 500) {
+        errorMessage =
+          "Erreur interne du serveur. Veuillez réessayer plus tard.";
+        setModalImage(Warning);
+        // You can handle other status codes here if needed
       }
       setModalMessage(errorMessage);
     } finally {
+      setIsLoading(false); // End loading indicator
       setSubmitSuccess(true);
       setIsModalOpen(true);
       setTimeout(() => {
@@ -255,7 +263,9 @@ const Register = () => {
                       type="submit"
                       className="button is-block is-info is-fullwidth"
                     >
-                      Envoyer le formulaire
+                      {isLoading
+                        ? "Envoi en cours..."
+                        : "Envoyer le formulaire"}
                     </button>
                   </form>
                 </div>
